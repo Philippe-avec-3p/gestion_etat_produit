@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
-        <nav className="bg-gradient-to-r from-green-300 to-green-500 shadow-lg p-4">
+        <nav className="bg-custom-green shadow-lg p-4">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 {/* Logo + Titre */}
                 <div className="flex items-center space-x-3">

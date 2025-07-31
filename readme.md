@@ -17,4 +17,14 @@ Application développée par **Philippe Rakotondrabe**
 - Gestion des états d'obsolescence  
 - Interface responsive
 
+## Mise en route (local)
 
+---
+Lancer le serveur backend :
+```bash
+uvicorn main:app --reload
+```
+Lancer le serveur frontend :
+```bash
+npm run dev
+````
