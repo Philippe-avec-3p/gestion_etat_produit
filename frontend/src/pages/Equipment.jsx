@@ -115,8 +115,8 @@ function Equipment() {
                         <td className="border p-2">{eq.etat_nom}</td>
                         <td className="border p-2">{eq.prix_achat}€</td>
                         <td className="border p-2">
-                            <button onClick={() => handleEdit(eq)} className="bg-yellow-500 text-white p-1 mr-1">Edit</button>
-                            <button onClick={() => handleDelete(eq.id)} className="bg-red-500 text-white p-1">Del</button>
+                            <button onClick={() => handleEdit(eq)} className="bg-yellow-500 text-white p-1 mr-1">Editer</button>
+                            <button onClick={() => handleDelete(eq.id)} className="bg-red-500 text-white p-1">Supprimer</button>
                         </td>
                     </tr>
                 ))}
