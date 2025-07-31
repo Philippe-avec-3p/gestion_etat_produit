@@ -30,7 +30,32 @@ class Equipement(BaseModel):
     etat_id: int
     prix_achat: float = None
 
+@app.get("/stats")
+def get_stats():
+    conn = get_db()
+    try:
+        cur = conn.cursor()
 
+
+        cur.execute("SELECT COUNT(*) as total FROM equipements")
+        total = cur.fetchone()['total']
+
+
+        cur.execute("""
+            SELECT et.nom, COUNT(*) as count
+            FROM equipements e
+            JOIN etats et ON e.etat_id = et.id
+            GROUP BY et.nom, et.id
+            ORDER BY et.id
+        """)
+        etats_stats = cur.fetchall()
+
+        return {
+            "total_equipements": total,
+            "par_etat": etats_stats
+        }
+    finally:
+        conn.close()
 
 @app.get("/equipements")
 def get_equipements():
